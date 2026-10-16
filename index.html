@@ -1,176 +1,196 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Galaxy Z Fold8 — Unfold your world</title>
-<meta name="description" content="Galaxy Z Fold8. A 720-frame scroll-driven sequence: the phone unfolds as you scroll. Armor FlexHinge, Infinity Flex display, pro-grade camera.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Crect x='6' y='7' width='9' height='18' rx='2' fill='%23F8E29F'/%3E%3Crect x='17' y='7' width='9' height='18' rx='2' fill='%23B48645'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galaxy Z Fold8 — Unfold your world</title>
+  <meta name="description"
+    content="Galaxy Z Fold8. A 720-frame scroll-driven sequence: the phone unfolds as you scroll. Armor FlexHinge, Infinity Flex display, pro-grade camera.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Crect x='6' y='7' width='9' height='18' rx='2' fill='%23F8E29F'/%3E%3Crect x='17' y='7' width='9' height='18' rx='2' fill='%23B48645'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="is-loading">
 
-<div id="loader">
-  <div class="loader__content">
-    <div class="loader__bar"><i data-load-bar></i></div>
-    <p class="loader__text"><span data-load-pct>0</span>%</p>
-  </div>
-</div>
-
-<div class="progress" aria-hidden="true"><span data-progress></span></div>
-
-<header class="topbar" data-nav>
-  <a class="topbar__brand" href="#top">SAMSUNG</a>
-  <nav class="topbar__links">
-    <a href="#camera">Camera</a>
-    <a href="#specs">Specs</a>
-  </nav>
-  <a class="btn btn--pill" href="#buy">Buy now</a>
-</header>
-
-<main id="top">
-
-  <section class="reel" id="reel" data-reel>
-    <div class="reel__sticky">
-      <canvas id="stage" aria-label="Galaxy Z Fold8 unfolding, frame sequence"></canvas>
-      <div class="reel__vignette" aria-hidden="true"></div>
-
-      <div class="ov ov--center" data-ov="intro">
-        <p class="kicker">Samsung Galaxy</p>
-<h1 class="display">Galaxy Z Fold8</h1>
-        <p class="subtitle">Unfold your world</p>
-      </div>
-
-      <div class="ov ov--left" data-ov="1">
-        <p class="kicker">01 — Hinge</p>
-        <h2 class="heading">Armor FlexHinge</h2>
-        <p class="copy">Twin support plates and a hidden gear system. It opens flatter, folds tighter, and is tested to 500,000 folds.</p>
-      </div>
-
-      <div class="ov ov--right" data-ov="2">
-        <p class="kicker">02 — Display</p>
-        <h2 class="heading">Infinity Flex, unfolded</h2>
-        <p class="copy">8 inches of Dynamic AMOLED 3X at 120Hz and 2,600 nits — bright enough to forget the sun is out.</p>
-      </div>
-
-      <div class="ov ov--left" data-ov="3">
-        <p class="kicker">03 — Design</p>
-        <h2 class="heading">8.9mm. Pocket-sized.</h2>
-        <p class="copy">Armor aluminium, 218 grams, and a cover screen you can actually finish a reply on.</p>
-      </div>
-
-      <div class="ov ov--right" data-ov="4">
-        <p class="kicker">04 — Camera</p>
-        <h2 class="heading">Pro-grade, unfolded</h2>
-        <p class="copy">200MP wide, 5x optical and Nightography. Half-fold it, set it down, and shoot the dark like it's daylight.</p>
-      </div>
-
-      <div class="ov ov--center" data-ov="outro">
-        <h2 class="display display--sm">The Future Unfolded.</h2>
-        <a class="btn btn--pill btn--lg" href="#buy">Buy now</a>
-      </div>
-
-      <div class="reel__hint" data-hint aria-hidden="true">
-        <span class="reel__mouse"><i></i></span> Scroll to unfold
-      </div>
-      <div class="reel__count" aria-hidden="true"><span data-frame>000</span> / 719</div>
+  <div id="loader">
+    <div class="loader__content">
+      <div class="loader__bar"><i data-load-bar></i></div>
+      <p class="loader__text"><span data-load-pct>0</span>%</p>
     </div>
-  </section>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+  <header class="topbar" data-nav>
+    <a class="topbar__brand" href="#top">SAMSUNG</a>
+    <nav class="topbar__links">
+      <a href="#camera">Camera</a>
+      <a href="#specs">Specs</a>
+    </nav>
+    <a class="btn btn--pill" href="#buy">Buy now</a>
+  </header>
+
+  <main id="top">
+
+    <section class="reel" id="reel" data-reel>
+      <div class="reel__sticky">
+        <canvas id="stage" aria-label="Galaxy Z Fold8 unfolding, frame sequence"></canvas>
+        <div class="reel__vignette" aria-hidden="true"></div>
+
+        <div class="ov ov--center" data-ov="intro">
+          <p class="kicker">Samsung Galaxy</p>
+          <h1 class="display">Galaxy Z Fold8</h1>
+          <p class="subtitle">Unfold your world</p>
+        </div>
+
+        <div class="ov ov--left" data-ov="1">
+          <p class="kicker">01 — Hinge</p>
+          <h2 class="heading">Armor FlexHinge</h2>
+          <p class="copy">Twin support plates and a hidden gear system. It opens flatter, folds tighter, and is tested
+            to 500,000 folds.</p>
+        </div>
+
+        <div class="ov ov--right" data-ov="2">
+          <p class="kicker">02 — Display</p>
+          <h2 class="heading">Infinity Flex, unfolded</h2>
+          <p class="copy">8 inches of Dynamic AMOLED 3X at 120Hz and 2,600 nits — bright enough to forget the sun is
+            out.</p>
+        </div>
+
+        <div class="ov ov--left" data-ov="3">
+          <p class="kicker">03 — Design</p>
+          <h2 class="heading">8.9mm. Pocket-sized.</h2>
+          <p class="copy">Armor aluminium, 218 grams, and a cover screen you can actually finish a reply on.</p>
+        </div>
+
+        <div class="ov ov--right" data-ov="4">
+          <p class="kicker">04 — Camera</p>
+          <h2 class="heading">Pro-grade, unfolded</h2>
+          <p class="copy">200MP wide, 5x optical and Nightography. Half-fold it, set it down, and shoot the dark like
+            it's daylight.</p>
+        </div>
+
+        <div class="ov ov--center" data-ov="outro">
+          <h2 class="display display--sm">The Future Unfolded.</h2>
+          <a class="btn btn--pill btn--lg" href="#buy">Buy now</a>
+        </div>
+
+        <div class="reel__hint" data-hint aria-hidden="true">
+          <span class="reel__mouse"><i></i></span> Scroll to unfold
+        </div>
+        <div class="reel__count" aria-hidden="true"><span data-frame>000</span> / 719</div>
+      </div>
+    </section>
 
     <!-- ===================== CAMERA / SEQUENCE GALLERY ===================== -->
-  <section class="gallery" id="camera" data-scene data-mode="track">
-    <div class="sticky">
-      <header class="gallery__head">
-        <p class="kicker" data-reveal>Shot on Galaxy Z Fold8</p>
-        <h2 class="heading heading--lg" data-reveal>Flex your angles.</h2>
-      </header>
-      <div class="track" data-track>
-        <article class="card">
-          <div class="card__art">
-            <img src="images/s1.jpg" alt="Galaxy Z Fold8 folded, cover display ready" loading="lazy" width="1280" height="960">
-            <span class="tag">Folded</span>
-</div>
-          <h3>Fits every pocket</h3>
-          <p>Closed, it's a slender slab of glass and titanium that slips into a pocket and stays out of the way — until you need it.</p>
-        </article>
-        <article class="card">
-          <div class="card__art">
-            <img src="images/s2.jpg" alt="Galaxy Z Fold8 half-open in FlexMode showing maps" loading="lazy" width="1280" height="960">
-            <span class="tag">FlexMode</span>
-          </div>
-          <h3>Half-open. Fully useful.</h3>
-          <p>Prop the hinge at any angle — maps above, controls below. Like a tiny, folding laptop in your hand.</p>
-        </article>
-        <article class="card">
-          <div class="card__art">
-            <img src="images/s3.jpg" alt="Galaxy Z Fold8 and Fold8 Ultra fully unfolded" loading="lazy" width="1280" height="853">
-            <span class="tag">Infinity Flex</span>
-          </div>
-          <h3>Unfolded, it's a tablet.</h3>
-          <p>A barely-there crease across the main display. Read, watch and work edge to edge.</p>
-        </article>
-        <article class="card">
-          <div class="card__art">
-            <img src="images/s4.jpg" alt="Camera app open on the Galaxy Z Fold8 main display" loading="lazy" width="1280" height="960">
-            <span class="tag">200MP</span>
-          </div>
-          <h3>A pro camera, unfolded.</h3>
-          <p>Flip it open to a full-screen finder — and preview every rear lens on the big display.</p>
-        </article>
-        <article class="card">
-          <div class="card__art">
-            <img src="images/s5.jpg" alt="YouTube running on the Galaxy Z Fold8 unfolded display" loading="lazy" width="1280" height="960">
-            <span class="tag">120Hz</span>
-          </div>
-          <h3>A cinema in your pocket.</h3>
-          <p>Open it up and the whole screen becomes your feed — bright, smooth and edge to edge.</p>
-        </article>
-      </div>
+    <section class="gallery" id="camera" data-scene data-mode="track">
+      <div class="sticky">
+        <header class="gallery__head">
+          <p class="kicker" data-reveal>Shot on Galaxy Z Fold8</p>
+          <h2 class="heading heading--lg" data-reveal>Flex your angles.</h2>
+        </header>
+        <div class="track" data-track>
+          <article class="card">
+            <div class="card__art">
+              <img src="images/s1.jpg" alt="Galaxy Z Fold8 folded, cover display ready" loading="lazy" width="1280"
+                height="960">
+              <span class="tag">Folded</span>
+            </div>
+            <h3>Fits every pocket</h3>
+            <p>Closed, it's a slender slab of glass and titanium that slips into a pocket and stays out of the way —
+              until you need it.</p>
+          </article>
+          <article class="card">
+            <div class="card__art">
+              <img src="images/s2.jpg" alt="Galaxy Z Fold8 half-open in FlexMode showing maps" loading="lazy"
+                width="1280" height="960">
+              <span class="tag">FlexMode</span>
+            </div>
+            <h3>Half-open. Fully useful.</h3>
+            <p>Prop the hinge at any angle — maps above, controls below. Like a tiny, folding laptop in your hand.</p>
+          </article>
+          <article class="card">
+            <div class="card__art">
+              <img src="images/s3.jpg" alt="Galaxy Z Fold8 and Fold8 Ultra fully unfolded" loading="lazy" width="1280"
+                height="853">
+              <span class="tag">Infinity Flex</span>
+            </div>
+            <h3>Unfolded, it's a tablet.</h3>
+            <p>A barely-there crease across the main display. Read, watch and work edge to edge.</p>
+          </article>
+          <article class="card">
+            <div class="card__art">
+              <img src="images/s4.jpg" alt="Camera app open on the Galaxy Z Fold8 main display" loading="lazy"
+                width="1280" height="960">
+              <span class="tag">200MP</span>
+            </div>
+            <h3>A pro camera, unfolded.</h3>
+            <p>Flip it open to a full-screen finder — and preview every rear lens on the big display.</p>
+          </article>
+          <article class="card">
+            <div class="card__art">
+              <img src="images/s5.jpg" alt="YouTube running on the Galaxy Z Fold8 unfolded display" loading="lazy"
+                width="1280" height="960">
+              <span class="tag">120Hz</span>
+            </div>
+            <h3>A cinema in your pocket.</h3>
+            <p>Open it up and the whole screen becomes your feed — bright, smooth and edge to edge.</p>
+          </article>
+        </div>
 
-      <div class="gallery__rail" aria-hidden="true"><i data-rail></i></div>
-    </div>
-  </section>
+        <div class="gallery__rail" aria-hidden="true"><i data-rail></i></div>
+      </div>
+    </section>
 
     <!-- ===================== SPECS ===================== -->
-  <section class="specs" id="specs">
-    <header class="specs__head">
-      <p class="kicker" data-reveal>By the numbers</p>
-      <h2 class="heading heading--lg" data-reveal>Small folded.<br>Serious everywhere else.</h2>
-    </header>
-    <div class="specs__grid">
-      <div class="stat" data-reveal style="--d:.00s"><strong><span data-count="8" data-dec="1">0</span>"</strong><span>Main display, Dynamic AMOLED 3X</span></div>
-      <div class="stat" data-reveal style="--d:.06s"><strong><span data-count="200">0</span>MP</strong><span>Wide camera with OIS</span></div>
-      <div class="stat" data-reveal style="--d:.12s"><strong><span data-count="4.2" data-dec="1">0</span>mm</strong><span>Unfolded — the thinnest Fold yet</span></div>
-      <div class="stat" data-reveal style="--d:.18s"><strong><span data-count="4400">0</span>mAh</strong><span>Adaptive battery, 45W charging</span></div>
-      <div class="stat" data-reveal style="--d:.24s"><strong><span data-count="500">0</span>K</strong><span>Open-and-close cycles, tested</span></div>
-      <div class="stat" data-reveal style="--d:.30s"><strong><span data-count="218">0</span>g</strong><span>Armor aluminium frame</span></div>
-    </div>
-  </section>
+    <section class="specs" id="specs">
+      <header class="specs__head">
+        <p class="kicker" data-reveal>By the numbers</p>
+        <h2 class="heading heading--lg" data-reveal>Small folded.<br>Serious everywhere else.</h2>
+      </header>
+      <div class="specs__grid">
+        <div class="stat" data-reveal style="--d:.00s"><strong><span data-count="8"
+              data-dec="1">0</span>"</strong><span>Main display, Dynamic AMOLED 3X</span></div>
+        <div class="stat" data-reveal style="--d:.06s"><strong><span data-count="200">0</span>MP</strong><span>Wide
+            camera with OIS</span></div>
+        <div class="stat" data-reveal style="--d:.12s"><strong><span data-count="4.2"
+              data-dec="1">0</span>mm</strong><span>Unfolded — the thinnest Fold yet</span></div>
+        <div class="stat" data-reveal style="--d:.18s"><strong><span
+              data-count="4400">0</span>mAh</strong><span>Adaptive battery, 45W charging</span></div>
+        <div class="stat" data-reveal style="--d:.24s"><strong><span
+              data-count="500">0</span>K</strong><span>Open-and-close cycles, tested</span></div>
+        <div class="stat" data-reveal style="--d:.30s"><strong><span data-count="218">0</span>g</strong><span>Armor
+            aluminium frame</span></div>
+      </div>
+    </section>
 
     <section class="cta" id="buy">
-    <div class="cta__bg" aria-hidden="true">
-      <img src="images/cta.jpg" alt="" loading="lazy" width="1920" height="567">
-    </div>
-    <p class="kicker" data-reveal>Galaxy Z Fold8</p>
-    <h2 class="display display--sm" data-reveal>Unfold your world.</h2>
-    <div class="cta__actions" data-reveal>
-      <a class="btn btn--pill btn--lg" href="#buy">Buy now</a>
-      <a class="btn btn--ghost" href="#reel">Watch it unfold</a>
-    </div>
-    <p class="cta__fine" data-reveal>From $1,899.99 or $79.17/mo for 24 months. Trade-in saves up to $900.</p>
-  </section>
+      <div class="cta__bg" aria-hidden="true">
+        <img src="images/cta.jpg" alt="" loading="lazy" width="1920" height="567">
+      </div>
+      <p class="kicker" data-reveal>Galaxy Z Fold8</p>
+      <h2 class="display display--sm" data-reveal>Unfold your world.</h2>
+      <div class="cta__actions" data-reveal>
+        <a class="btn btn--pill btn--lg" href="#buy">Buy now</a>
+        <a class="btn btn--ghost" href="#reel">Watch it unfold</a>
+      </div>
+      <p class="cta__fine" data-reveal>From $1,899.99 or $79.17/mo for 24 months. Trade-in saves up to $900.</p>
+    </section>
 
-</main>
+  </main>
 
   <p class="foot__fine">
     Concept page — Galaxy Z Fold8 is a fictional product built as a scroll-animation demo.<br>
     Photography: Kyu3a, ScribblingGeek, Dinkun Chen via Wikimedia Commons (CC BY-SA 4.0).
   </p>
-</footer>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

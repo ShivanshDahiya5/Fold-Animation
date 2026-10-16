@@ -1,0 +1,13 @@
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#000;
+  --ink:#fff;
+  --muted:rgba(255,255,255,.58);
+  --line:rgba(255,255,255,.14);
+  --gold-1:#F8E29F;
+  --gold-2:#B48645;
+  --gold:linear-gradient(135deg,var(--gold-1) 0%,var(--gold-2) 100%);
+  --pad:clamp(1.2rem,6vw,7.5rem);
+  --reel:800vh;
+}

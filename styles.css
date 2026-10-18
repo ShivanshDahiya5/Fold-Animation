@@ -148,3 +148,10 @@ a{color:inherit;text-decoration:none}
   position:absolute;left:50%;top:6px;width:2px;height:5px;margin-left:-1px;
   background:var(--gold-1);border-radius:2px;animation:wheel 1.6s ease-in-out infinite;
 }
+@keyframes wheel{0%{opacity:0;transform:translateY(-3px)}40%{opacity:1}100%{opacity:0;transform:translateY(9px)}}
+.reel__count{
+  position:absolute;right:var(--pad);bottom:3.4vh;z-index:12;
+  font-size:.7rem;letter-spacing:.18em;color:rgba(255,255,255,.5);
+  font-variant-numeric:tabular-nums;
+}
+.reel__count span{color:var(--gold-1)}

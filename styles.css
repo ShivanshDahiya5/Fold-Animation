@@ -105,3 +105,9 @@ a{color:inherit;text-decoration:none}
 .topbar__links{display:flex;gap:1.8rem;font-size:.85rem;color:rgba(255,255,255,.75)}
 .topbar__links a{transition:color .25s ease}
 .topbar__links a:hover{color:var(--gold-1)}
+
+.reel{position:relative;height:var(--reel);background:#000}
+.reel__sticky{
+  position:sticky;top:0;height:100vh;width:100%;overflow:hidden;background:#000;
+}
+#stage{position:absolute;inset:0;width:100%;height:100%;display:block}

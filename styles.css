@@ -87,3 +87,12 @@ a{color:inherit;text-decoration:none}
 /* ---------- page progress ---------- */
 .progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:200;pointer-events:none}
 .progress span{display:block;height:100%;width:0;background:var(--gold)}
+
+.topbar{
+  position:fixed;top:0;left:0;width:100%;z-index:150;
+  display:flex;align-items:center;gap:2rem;
+  padding:1.4rem var(--pad);
+  transition:background-color .4s ease,padding .4s ease,backdrop-filter .4s ease;
+}
+.topbar.is-stuck{
+  background:rgba(0,0,0,.72);backdrop-filter:blur(14px);

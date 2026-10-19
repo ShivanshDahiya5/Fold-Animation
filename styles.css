@@ -188,3 +188,8 @@ a{color:inherit;text-decoration:none}
 .card h3{
   margin-top:1.1rem;font-size:1.06rem;font-weight:600;letter-spacing:-.01em;
 }
+.card p{margin-top:.45rem;font-size:.9rem;line-height:1.55;color:var(--muted)}
+.gallery__rail{
+  margin:0 var(--pad);height:1px;background:rgba(255,255,255,.12);position:relative;
+}
+.gallery__rail i{position:absolute;left:0;top:-1px;height:3px;width:8%;background:var(--gold)}

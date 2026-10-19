@@ -209,3 +209,9 @@ a{color:inherit;text-decoration:none}
   padding:2rem 1.5rem 2rem 0;border-bottom:1px solid var(--line);
   display:flex;flex-direction:column;gap:.55rem;
 }
+.stat strong{
+  font-size:clamp(2.4rem,5vw,3.6rem);font-weight:600;letter-spacing:-.04em;line-height:1;
+  background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;
+  font-variant-numeric:tabular-nums;
+}
+.stat > span{font-size:.85rem;color:var(--muted);line-height:1.5}

@@ -155,3 +155,10 @@ a{color:inherit;text-decoration:none}
   font-variant-numeric:tabular-nums;
 }
 .reel__count span{color:var(--gold-1)}
+
+.gallery{position:relative;height:360vh;background:#000}
+.gallery .sticky{
+  position:sticky;top:0;height:100vh;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;gap:2.2rem;
+}
+.gallery__head{padding:0 var(--pad);display:flex;flex-direction:column;gap:.8rem}

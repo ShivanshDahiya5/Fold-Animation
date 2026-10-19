@@ -171,3 +171,11 @@ a{color:inherit;text-decoration:none}
   position:relative;aspect-ratio:4/3;overflow:hidden;
   border:1px solid var(--line);border-radius:10px;background:#0a0a0a;
 }
+.card__art img{
+  width:100%;height:100%;object-fit:cover;
+  transform:scale(1.02);transition:transform .9s cubic-bezier(.2,.7,.3,1);
+}
+.card:hover .card__art img{transform:scale(1.08)}
+.tag{
+  position:absolute;left:.9rem;top:.9rem;
+  padding:.4rem .75rem;border-radius:999px;

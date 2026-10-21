@@ -16,3 +16,12 @@ const loader = document.getElementById('loader');
   const loadPct = document.querySelector('[data-load-pct]');
   const frames = new Array(N);
   let settled = 0, goodFrames = 0, started = false;
+
+  function onSettled(ok) {
+    settled++;
+    if (ok) goodFrames++;
+    const pct = Math.round((settled / N) * 100);
+    if (loadBar) loadBar.style.width = pct + '%';
+    if (loadPct) loadPct.textContent = String(pct);
+    if (settled === N) reveal();
+  }

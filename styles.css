@@ -241,3 +241,12 @@ a{color:inherit;text-decoration:none}
 .cta__actions .btn--ghost{padding:0 2.3rem;border-color:rgba(255,255,255,.45)}
 .cta__actions .btn--ghost:hover{transform:scale(1.03)}
 .cta__fine{font-size:.8rem;color:var(--muted);max-width:44rem;line-height:1.6}
+
+
+.foot{
+  border-top:1px solid var(--line);
+  padding:3rem var(--pad) 3.4rem;
+  display:flex;flex-wrap:wrap;gap:1.4rem 2.5rem;align-items:center;
+}
+.foot__brand{font-size:.95rem;font-weight:700;letter-spacing:.15em;margin-right:auto}
+.foot nav{display:flex;gap:1.6rem;font-size:.85rem;color:rgba(255,255,255,.7)}

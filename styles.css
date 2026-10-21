@@ -289,3 +289,11 @@ body.no-frames #stage{display:none}
   .ov--center::before{background:radial-gradient(74% 50% at 50% 72%,rgba(0,0,0,.9),rgba(0,0,0,.5) 62%,transparent 82%)}
   .reel__count{display:none}
 }
+@media (max-width:640px){
+  .specs__grid{grid-template-columns:1fr}
+  .stat{padding:1.6rem 0}
+  .card{width:82vw}
+  .foot{gap:1.2rem}
+  .cta__actions{gap:.7rem}
+  .cta__actions .btn{height:2.9rem;padding:0 1.4rem;font-size:.85rem}
+}

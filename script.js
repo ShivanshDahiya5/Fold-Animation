@@ -25,3 +25,12 @@ const loader = document.getElementById('loader');
     if (loadPct) loadPct.textContent = String(pct);
     if (settled === N) reveal();
   }
+
+  for (let i = 0; i < N; i++) {
+    const img = new Image();
+    img.decoding = 'async';
+    img.onload = () => onSettled(true);
+    img.onerror = () => onSettled(false);
+    img.src = frameURL(i);
+    frames[i] = img;
+  }

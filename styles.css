@@ -232,3 +232,12 @@ a{color:inherit;text-decoration:none}
 }
 .cta > *:not(.cta__bg){position:relative;z-index:1}
 .cta__actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;align-items:center;margin-top:1rem}
+
+.cta__actions .btn{
+  margin-top:0;display:inline-flex;align-items:center;justify-content:center;
+  height:3.1rem;line-height:1;font-size:.9rem;
+}
+.cta__actions .btn--pill{padding:0 2.9rem}
+.cta__actions .btn--ghost{padding:0 2.3rem;border-color:rgba(255,255,255,.45)}
+.cta__actions .btn--ghost:hover{transform:scale(1.03)}
+.cta__fine{font-size:.8rem;color:var(--muted);max-width:44rem;line-height:1.6}

@@ -297,3 +297,10 @@ body.no-frames #stage{display:none}
   .cta__actions{gap:.7rem}
   .cta__actions .btn{height:2.9rem;padding:0 1.4rem;font-size:.85rem}
 }
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reel__mouse i{animation:none}
+  [data-reveal]{transition:none;opacity:1;transform:none}
+  .card__art img{transition:none}
+}

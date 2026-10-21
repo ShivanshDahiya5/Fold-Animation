@@ -10,3 +10,9 @@
     const t = clamp((v - a) / (b - a), 0, 1);
     return t * t * (3 - 2 * t);
   };
+
+const loader = document.getElementById('loader');
+  const loadBar = document.querySelector('[data-load-bar]');
+  const loadPct = document.querySelector('[data-load-pct]');
+  const frames = new Array(N);
+  let settled = 0, goodFrames = 0, started = false;

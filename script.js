@@ -52,3 +52,12 @@ const loader = document.getElementById('loader');
     paintReel(reelP, true);
     kick();
   }
+
+  //  2. CANVAS — cover-fit draw
+
+    const sticky = document.querySelector('.reel__sticky');
+  const cv = document.getElementById('stage');
+  const ctx = cv ? cv.getContext('2d', { alpha: false }) : null;
+  const frameEl = document.querySelector('[data-frame]');
+  const hint = document.querySelector('[data-hint]');
+  let lastDrawn = -1, needResize = true;

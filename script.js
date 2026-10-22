@@ -116,3 +116,15 @@ const loader = document.getElementById('loader');
     }
     if (hint) hint.classList.toggle('is-hidden', p > 0.015);
   }
+
+    //  4. SCENES (sticky horizontal track) + page chrome
+
+  const scenes = [...document.querySelectorAll('[data-scene]')].map(el => ({
+    el,
+    mode: el.dataset.mode || 'plain',
+    track: el.querySelector('[data-track]'),
+    rail: el.querySelector('[data-rail]'),
+    p: 0, target: 0, maxX: 0
+  }));
+
+  const reel = document.querySelector('[data-reel]');

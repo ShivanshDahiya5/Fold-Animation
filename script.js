@@ -80,3 +80,11 @@ const loader = document.getElementById('loader');
     if (!cw || !ch) return;
     const ir = img.naturalWidth / img.naturalHeight;
     const cr = cw / ch;
+    let dw, dh;
+    if (cr > ir) { dw = cw; dh = cw / ir; } else { dh = ch; dw = ch * ir; }
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, cw, ch);
+    ctx.drawImage(img, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+    lastDrawn = idx;
+    if (frameEl) frameEl.textContent = String(idx).padStart(3, '0');
+  }

@@ -34,3 +34,12 @@ const loader = document.getElementById('loader');
     img.src = frameURL(i);
     frames[i] = img;
   }
+
+    // safety: never trap the user behind the loader
+  setTimeout(() => { if (!started && settled < N) { settled = N; reveal(); } }, 45000);
+
+  function reveal() {
+    if (started) return;
+    started = true;
+    if (goodFrames === 0) document.body.classList.add('no-frames');
+    document.body.classList.remove('is-loading');

@@ -128,3 +128,15 @@ const loader = document.getElementById('loader');
   }));
 
   const reel = document.querySelector('[data-reel]');
+  const nav = document.querySelector('[data-nav]');
+  const bar = document.querySelector('[data-progress]');
+  let reelP = 0, reelTarget = 0;
+
+  function measure() {
+    const vw = window.innerWidth;
+    scenes.forEach(s => { if (s.track) s.maxX = Math.max(0, s.track.scrollWidth - vw + 24); });
+    resizeCanvas();
+  }
+
+  function readTargets() {
+    const vh = window.innerHeight;

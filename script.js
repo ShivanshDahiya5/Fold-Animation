@@ -201,3 +201,26 @@ const loader = document.getElementById('loader');
     else running = false;
   }
   function kick() { if (!running) { running = true; requestAnimationFrame(tick); } }
+
+
+  const revealIO = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => revealIO.observe(el));
+
+  const countIO = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      obs.unobserve(e.target);
+      const el = e.target;
+      const end = parseFloat(el.dataset.count);
+      const dec = parseInt(el.dataset.dec || '0', 10);
+      const dur = reduced ? 1 : 1500;
+      const t0 = performance.now();
+      const step = now => {
+        const t = clamp((now - t0) / dur, 0, 1);
+        const val = end * (1 - Math.pow(1 - t, 3));
+        el.textContent = dec ? val.toFixed(dec) : Math.round(val).toLocaleString('en-US');
+        if (t < 1) requestAnimationFrame(step);

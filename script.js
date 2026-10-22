@@ -189,3 +189,15 @@ const loader = document.getElementById('loader');
     if (Math.abs(d) < 0.0003) reelP = reelTarget;
     else { reelP += d * EASE; keep = true; }
     paintReel(reelP);
+
+        for (const s of scenes) {
+      const sd = s.target - s.p;
+      if (Math.abs(sd) < 0.0004) s.p = s.target;
+      else { s.p += sd * EASE; keep = true; }
+      paintScene(s);
+    }
+
+    if (keep) requestAnimationFrame(tick);
+    else running = false;
+  }
+  function kick() { if (!running) { running = true; requestAnimationFrame(tick); } }

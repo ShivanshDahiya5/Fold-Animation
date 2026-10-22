@@ -71,3 +71,12 @@ const loader = document.getElementById('loader');
     cv.height = Math.round(h * dpr);
     needResize = true;
   }
+
+    function drawFrame(idx) {
+    if (!ctx) return;
+    const img = frames[idx];
+    if (!img || !img.complete || !img.naturalWidth) return;
+    const cw = cv.width, ch = cv.height;
+    if (!cw || !ch) return;
+    const ir = img.naturalWidth / img.naturalHeight;
+    const cr = cw / ch;

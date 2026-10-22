@@ -43,3 +43,12 @@ const loader = document.getElementById('loader');
     started = true;
     if (goodFrames === 0) document.body.classList.add('no-frames');
     document.body.classList.remove('is-loading');
+    if (loader) loader.classList.add('is-done');
+    setTimeout(() => { if (loader) loader.style.display = 'none'; }, 900);
+    measure();
+    readTargets();
+    reelP = reelTarget;
+    scenes.forEach(s => { s.p = s.target; paintScene(s); });
+    paintReel(reelP, true);
+    kick();
+  }

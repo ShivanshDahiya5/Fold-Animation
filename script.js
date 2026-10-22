@@ -172,3 +172,20 @@ const loader = document.getElementById('loader');
   }
 
   function paintScene(s) {
+    if (s.mode === 'track' && s.track) {
+      s.track.style.transform = `translate3d(${(-s.p * s.maxX).toFixed(2)}px,0,0)`;
+      if (s.rail) s.rail.style.width = (8 + s.p * 92).toFixed(2) + '%';
+    }
+  }
+
+    //  5. LOOP
+
+  let running = false;
+  function tick() {
+    readTargets();
+    let keep = false;
+
+    const d = reelTarget - reelP;
+    if (Math.abs(d) < 0.0003) reelP = reelTarget;
+    else { reelP += d * EASE; keep = true; }
+    paintReel(reelP);

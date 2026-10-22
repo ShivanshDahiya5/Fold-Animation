@@ -151,3 +151,12 @@ const loader = document.getElementById('loader');
     scenes.forEach(s => {
       const r = s.el.getBoundingClientRect();
       const total = r.height - vh;
+      s.target = total > 4 ? clamp(-r.top / total, 0, 1) : (r.top <= 0 ? 1 : 0);
+    });
+
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - vh;
+    if (bar) bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0).toFixed(2) + '%';
+    if (nav) nav.classList.toggle('is-stuck', window.scrollY > 40);
+  }
+  let reelVisible = true;

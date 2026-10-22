@@ -160,3 +160,15 @@ const loader = document.getElementById('loader');
     if (nav) nav.classList.toggle('is-stuck', window.scrollY > 40);
   }
   let reelVisible = true;
+
+    function paintReel(p, force) {
+    if (!reelVisible && !force) return;
+    const idx = clamp(Math.round(p * (N - 1)), 0, N - 1);
+    if ((idx !== lastDrawn || needResize) && goodFrames > 0) {
+      if (needResize) { needResize = false; lastDrawn = -1; }
+      drawFrame(idx);
+    }
+    paintOverlays(p);
+  }
+
+  function paintScene(s) {

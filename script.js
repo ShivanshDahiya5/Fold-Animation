@@ -11,7 +11,7 @@
     return t * t * (3 - 2 * t);
   };
 
-const loader = document.getElementById('loader');
+  const loader = document.getElementById('loader');
   const loadBar = document.querySelector('[data-load-bar]');
   const loadPct = document.querySelector('[data-load-pct]');
   const frames = new Array(N);
@@ -35,7 +35,7 @@ const loader = document.getElementById('loader');
     frames[i] = img;
   }
 
-    // safety: never trap the user behind the loader
+  // safety: never trap the user behind the loader
   setTimeout(() => { if (!started && settled < N) { settled = N; reveal(); } }, 45000);
 
   function reveal() {
@@ -55,14 +55,14 @@ const loader = document.getElementById('loader');
 
   //  2. CANVAS — cover-fit draw
 
-    const sticky = document.querySelector('.reel__sticky');
+  const sticky = document.querySelector('.reel__sticky');
   const cv = document.getElementById('stage');
   const ctx = cv ? cv.getContext('2d', { alpha: false }) : null;
   const frameEl = document.querySelector('[data-frame]');
   const hint = document.querySelector('[data-hint]');
   let lastDrawn = -1, needResize = true;
 
-    function resizeCanvas() {
+  function resizeCanvas() {
     if (!cv || !sticky) return;
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     const w = sticky.clientWidth, h = sticky.clientHeight;
@@ -72,7 +72,7 @@ const loader = document.getElementById('loader');
     needResize = true;
   }
 
-    function drawFrame(idx) {
+  function drawFrame(idx) {
     if (!ctx) return;
     const img = frames[idx];
     if (!img || !img.complete || !img.naturalWidth) return;
@@ -92,12 +92,12 @@ const loader = document.getElementById('loader');
   // 3. OVERLAYS — fade/slide tied to reel progress
 
   const BLOCKS = [
-    { el: qs('[data-ov="intro"]'), a: -0.047, in: [-0.001, 0],      out: [0.055, 0.095], noY: true, grow: 0.05 },
-    { el: qs('[data-ov="1"]'),     a: 0.130,  in: [0.130, 0.175],  out: [0.255, 0.300] },
-    { el: qs('[data-ov="2"]'),     a: 0.335,  in: [0.335, 0.380],  out: [0.460, 0.505] },
-    { el: qs('[data-ov="3"]'),     a: 0.540,  in: [0.540, 0.585],  out: [0.665, 0.710] },
-    { el: qs('[data-ov="4"]'),     a: 0.745,  in: [0.745, 0.790],  out: [0.820, 0.865] },
-    { el: qs('[data-ov="outro"]'), a: 0.905,  in: [0.905, 0.950],  out: null, grow: 0.06 }
+    { el: qs('[data-ov="intro"]'), a: -0.047, in: [-0.001, 0], out: [0.055, 0.095], noY: true, grow: 0.05 },
+    { el: qs('[data-ov="1"]'), a: 0.130, in: [0.130, 0.175], out: [0.255, 0.300] },
+    { el: qs('[data-ov="2"]'), a: 0.335, in: [0.335, 0.380], out: [0.460, 0.505] },
+    { el: qs('[data-ov="3"]'), a: 0.540, in: [0.540, 0.585], out: [0.665, 0.710] },
+    { el: qs('[data-ov="4"]'), a: 0.745, in: [0.745, 0.790], out: [0.820, 0.865] },
+    { el: qs('[data-ov="outro"]'), a: 0.905, in: [0.905, 0.950], out: null, grow: 0.06 }
   ];
   function qs(sel) { return document.querySelector(sel); }
 
@@ -117,7 +117,7 @@ const loader = document.getElementById('loader');
     if (hint) hint.classList.toggle('is-hidden', p > 0.015);
   }
 
-    //  4. SCENES (sticky horizontal track) + page chrome
+  //  4. SCENES (sticky horizontal track) + page chrome
 
   const scenes = [...document.querySelectorAll('[data-scene]')].map(el => ({
     el,
@@ -141,7 +141,7 @@ const loader = document.getElementById('loader');
   function readTargets() {
     const vh = window.innerHeight;
 
-        if (reel) {
+    if (reel) {
       const r = reel.getBoundingClientRect();
       const total = r.height - vh;
       reelTarget = total > 4 ? clamp(-r.top / total, 0, 1) : (r.top <= 0 ? 1 : 0);
@@ -161,7 +161,7 @@ const loader = document.getElementById('loader');
   }
   let reelVisible = true;
 
-    function paintReel(p, force) {
+  function paintReel(p, force) {
     if (!reelVisible && !force) return;
     const idx = clamp(Math.round(p * (N - 1)), 0, N - 1);
     if ((idx !== lastDrawn || needResize) && goodFrames > 0) {
@@ -178,7 +178,7 @@ const loader = document.getElementById('loader');
     }
   }
 
-    //  5. LOOP
+  //  5. LOOP
 
   let running = false;
   function tick() {
@@ -190,7 +190,7 @@ const loader = document.getElementById('loader');
     else { reelP += d * EASE; keep = true; }
     paintReel(reelP);
 
-        for (const s of scenes) {
+    for (const s of scenes) {
       const sd = s.target - s.p;
       if (Math.abs(sd) < 0.0004) s.p = s.target;
       else { s.p += sd * EASE; keep = true; }
@@ -224,3 +224,20 @@ const loader = document.getElementById('loader');
         const val = end * (1 - Math.pow(1 - t, 3));
         el.textContent = dec ? val.toFixed(dec) : Math.round(val).toLocaleString('en-US');
         if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
+
+  /* =======================================================
+     7. WIRE UP
+     ======================================================= */
+  window.addEventListener('scroll', kick, { passive: true });
+  window.addEventListener('resize', () => { measure(); kick(); });
+  window.addEventListener('load', () => { measure(); kick(); });
+
+  measure();
+  readTargets();
+  paintOverlays(reelTarget);
+})();

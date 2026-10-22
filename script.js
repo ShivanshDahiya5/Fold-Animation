@@ -99,3 +99,10 @@ const loader = document.getElementById('loader');
     { el: qs('[data-ov="4"]'),     a: 0.745,  in: [0.745, 0.790],  out: [0.820, 0.865] },
     { el: qs('[data-ov="outro"]'), a: 0.905,  in: [0.905, 0.950],  out: null, grow: 0.06 }
   ];
+  function qs(sel) { return document.querySelector(sel); }
+
+  function paintOverlays(p) {
+    for (const b of BLOCKS) {
+      if (!b.el) continue;
+      const bEnd = b.out ? b.out[1] : 1;
+      const o = smooth(b.in[0], b.in[1], p) * (b.out ? 1 - smooth(b.out[0], b.out[1], p) : 1);

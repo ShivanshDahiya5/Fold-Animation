@@ -88,3 +88,14 @@ const loader = document.getElementById('loader');
     lastDrawn = idx;
     if (frameEl) frameEl.textContent = String(idx).padStart(3, '0');
   }
+
+  // 3. OVERLAYS — fade/slide tied to reel progress
+
+  const BLOCKS = [
+    { el: qs('[data-ov="intro"]'), a: -0.047, in: [-0.001, 0],      out: [0.055, 0.095], noY: true, grow: 0.05 },
+    { el: qs('[data-ov="1"]'),     a: 0.130,  in: [0.130, 0.175],  out: [0.255, 0.300] },
+    { el: qs('[data-ov="2"]'),     a: 0.335,  in: [0.335, 0.380],  out: [0.460, 0.505] },
+    { el: qs('[data-ov="3"]'),     a: 0.540,  in: [0.540, 0.585],  out: [0.665, 0.710] },
+    { el: qs('[data-ov="4"]'),     a: 0.745,  in: [0.745, 0.790],  out: [0.820, 0.865] },
+    { el: qs('[data-ov="outro"]'), a: 0.905,  in: [0.905, 0.950],  out: null, grow: 0.06 }
+  ];

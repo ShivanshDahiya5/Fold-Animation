@@ -140,3 +140,14 @@ const loader = document.getElementById('loader');
 
   function readTargets() {
     const vh = window.innerHeight;
+
+        if (reel) {
+      const r = reel.getBoundingClientRect();
+      const total = r.height - vh;
+      reelTarget = total > 4 ? clamp(-r.top / total, 0, 1) : (r.top <= 0 ? 1 : 0);
+      reelVisible = r.bottom > -vh && r.top < vh * 2;
+    }
+
+    scenes.forEach(s => {
+      const r = s.el.getBoundingClientRect();
+      const total = r.height - vh;

@@ -61,3 +61,13 @@ const loader = document.getElementById('loader');
   const frameEl = document.querySelector('[data-frame]');
   const hint = document.querySelector('[data-hint]');
   let lastDrawn = -1, needResize = true;
+
+    function resizeCanvas() {
+    if (!cv || !sticky) return;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const w = sticky.clientWidth, h = sticky.clientHeight;
+    if (!w || !h) return;
+    cv.width = Math.round(w * dpr);
+    cv.height = Math.round(h * dpr);
+    needResize = true;
+  }

@@ -106,3 +106,13 @@ const loader = document.getElementById('loader');
       if (!b.el) continue;
       const bEnd = b.out ? b.out[1] : 1;
       const o = smooth(b.in[0], b.in[1], p) * (b.out ? 1 - smooth(b.out[0], b.out[1], p) : 1);
+      const u = clamp((p - b.a) / (bEnd - b.a), 0, 1);
+      const y = b.noY ? 0 : (0.5 - u) * 72;
+      let t = `translate3d(0,${y.toFixed(1)}px,0)`;
+      if (b.grow) t += ` scale(${(1 + b.grow * u).toFixed(3)})`;
+      b.el.style.opacity = o.toFixed(3);
+      b.el.style.transform = t;
+      b.el.style.visibility = o < 0.01 ? 'hidden' : 'visible';
+    }
+    if (hint) hint.classList.toggle('is-hidden', p > 0.015);
+  }
